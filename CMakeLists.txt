@@ -723,9 +723,11 @@ message("JAS_INCLUDE_HEIC_CODEC: ${JAS_INCLUDE_HEIC_CODEC}")
 # Check for the Math library.
 ################################################################################
 
+if(NOT WIN32)
 find_library(MATH_LIBRARY m)
 if(NOT MATH_LIBRARY)
 	set(MATH_LIBRARY "")
+endif()
 endif()
 
 ################################################################################
