@@ -182,6 +182,14 @@ target_include_directories(libjasper BEFORE PRIVATE
 set_target_properties(libjasper PROPERTIES
   OUTPUT_NAME jasper LINKER_LANGUAGE C)
 
+if (MINGW)
+    set_target_properties(libjasper
+                          PROPERTIES
+                          OUTPUT_NAME jasper
+                          RUNTIME_OUTPUT_NAME jasper-${JAS_SO_VERSION}
+                          ARCHIVE_OUTPUT_NAME jasper)
+endif()
+
 if(MSVC)
 	target_compile_definitions(libjasper PRIVATE _CRT_SECURE_NO_WARNINGS)
 	target_compile_definitions(libjasper PRIVATE _CRT_SECURE_NO_DEPRECATE)
