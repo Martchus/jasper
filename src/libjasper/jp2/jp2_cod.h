@@ -288,10 +288,10 @@ typedef struct jp2_boxinfo_s {
 * Box class.
 \******************************************************************************/
 
-jp2_box_t *jp2_box_create(int type);
-void jp2_box_destroy(jp2_box_t *box);
-jp2_box_t *jp2_box_get(jas_stream_t *in);
-int jp2_box_put(jp2_box_t *box, jas_stream_t *out);
+JAS_DLLEXPORT jp2_box_t *jp2_box_create(int type);
+JAS_DLLEXPORT void jp2_box_destroy(jp2_box_t *box);
+JAS_DLLEXPORT jp2_box_t *jp2_box_get(jas_stream_t *in);
+JAS_DLLEXPORT int jp2_box_put(jp2_box_t *box, jas_stream_t *out);
 
 JAS_ATTRIBUTE_CONST
 static inline uint_least8_t JP2_DTYPETOBPC(uint_least8_t dtype)
@@ -309,7 +309,7 @@ static inline uint_least8_t JP2_BPCTODTYPE(uint_least8_t bpc)
 #define ICC_CS_YCBCR	0x59436272
 #define ICC_CS_GRAY	0x47524159
 
-const jp2_cdefchan_t *jp2_cdef_lookup(jp2_cdef_t *cdef, int channo);
+JAS_DLLEXPORT const jp2_cdefchan_t *jp2_cdef_lookup(jp2_cdef_t *cdef, int channo);
 
 
 #endif
