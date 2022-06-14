@@ -65,7 +65,7 @@
 /* The configuration header file should be included first. */
 #include <jasper/jas_config.h>
 
-#if defined(JAS_DLL)
+#if JAS_DLL
 	#if defined(_WIN32)
 		#if defined(JAS_BUILDING_DLL)
 			#define JAS_DLLEXPORT __declspec(dllexport)
