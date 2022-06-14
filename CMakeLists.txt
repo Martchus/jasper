@@ -274,11 +274,12 @@ endif()
 # Check for the Math library.
 ################################################################################
 
-find_library(MATH_LIBRARY m)
-if (NOT MATH_LIBRARY)
-	set(MATH_LIBRARY "")
+if(NOT WIN32)
+    find_library(MATH_LIBRARY m)
+    if (NOT MATH_LIBRARY)
+        set(MATH_LIBRARY "")
+    endif()
 endif()
-
 ################################################################################
 #
 ################################################################################
